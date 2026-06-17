@@ -20,10 +20,14 @@ Técnico e institucional. Linguagem clara, direta e objetiva, adequada ao contex
 Sempre priorizar imagens com:
 - Produtores rurais brasileiros — perfil racial representativo do campo brasileiro
 - Fazendas com realidade de médio e grande produtor do Brasil (não fazendas europeias ou norte-americanas)
-- Raças bovinas leiteiras presentes no Brasil (Girolando, Holandês, Jersey, Gir Leiteiro)
+- Raças bovinas leiteiras presentes no Brasil: Girolando, Holandês, Jersey, Gir Leiteiro
 - Ambientes e paisagens do agro brasileiro (cerrado, sul, sudeste — conforme contexto)
 
-Quando gerar imagens por IA (Pollinations, DALL-E, etc.), incluir no prompt: "Brazilian dairy farm, Brazilian farmer, tropical landscape, realistic, professional photography"
+NUNCA usar gado de corte (Nelore, Angus, Brahman, etc.) em conteúdo de pecuária leiteira ou produtos da Rúmina voltados ao leite. A diferença é visível e o público percebe.
+
+Para fotos de animais e fazendas: sempre usar banco de imagens real (Pexels, Unsplash) — IA gera anatomia de animal distorcida. Ao buscar no Pexels/Unsplash, usar termos: "Girolando cattle", "Holstein dairy farm Brazil", "Jersey cow Brazil", "vaca leiteira Brasil".
+
+Quando gerar imagens por IA (Pollinations, DALL-E, etc.) — apenas para paisagens sem animal em primeiro plano — incluir no prompt: "Brazilian dairy farm, tropical landscape, realistic, professional photography, no animals close up"
 
 ## Preferências adicionais
 - Conteúdo de redes sociais deve equilibrar linguagem técnica com clareza para o produtor rural
