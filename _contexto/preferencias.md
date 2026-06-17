@@ -15,6 +15,16 @@ Técnico e institucional. Linguagem clara, direta e objetiva, adequada ao contex
 - Estrutura clara quando o conteúdo exige hierarquia
 - Adequar o formato ao tipo de entrega: institucional para comunicação externa, mais objetivo para uso interno
 
+## Imagens e referências visuais
+
+Sempre priorizar imagens com:
+- Produtores rurais brasileiros — perfil racial representativo do campo brasileiro
+- Fazendas com realidade de médio e grande produtor do Brasil (não fazendas europeias ou norte-americanas)
+- Raças bovinas leiteiras presentes no Brasil (Girolando, Holandês, Jersey, Gir Leiteiro)
+- Ambientes e paisagens do agro brasileiro (cerrado, sul, sudeste — conforme contexto)
+
+Quando gerar imagens por IA (Pollinations, DALL-E, etc.), incluir no prompt: "Brazilian dairy farm, Brazilian farmer, tropical landscape, realistic, professional photography"
+
 ## Preferências adicionais
 - Conteúdo de redes sociais deve equilibrar linguagem técnica com clareza para o produtor rural
 - Materiais institucionais seguem o padrão corporativo da Rúmina
