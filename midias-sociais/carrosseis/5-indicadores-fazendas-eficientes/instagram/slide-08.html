@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px;
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(140deg, #061A1D 0%, #0B2E3C 55%, #071E22 100%);
+  position: relative; overflow: hidden;
+}
+.dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(0,197,160,0.10) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+.phone {
+  position: absolute;
+  right: -80px; top: 20px;
+  width: 600px; z-index: 2;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.75));
+  opacity: 0.88;
+}
+.phone img { width: 100%; display: block; }
+.phone-fade {
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 100%; height: 680px; z-index: 3;
+  background: linear-gradient(180deg, transparent 0%, rgba(6,26,29,0.75) 30%, rgba(6,26,29,0.97) 60%, rgba(6,26,29,1) 100%);
+}
+.phone-right-fade {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 120px; z-index: 4;
+  background: linear-gradient(90deg, transparent, rgba(6,26,29,0.9));
+}
+/* CPL balance / cost visualization */
+.balance-svg {
+  position: absolute;
+  left: 30px; top: 60px;
+  width: 440px; height: 400px;
+  z-index: 2; opacity: 0.20;
+}
+.ring {
+  position: absolute; left: -80px; top: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  border: 45px solid rgba(0,197,160,0.05);
+  z-index: 1;
+}
+.ghost {
+  position: absolute;
+  left: 60px; bottom: 280px;
+  font-size: 280px; font-weight: 700;
+  color: rgba(0,197,160,0.05); line-height: 1;
+  z-index: 1;
+}
+.content {
+  position: absolute;
+  bottom: 100px; left: 0; right: 0;
+  padding: 0 72px; z-index: 10;
+}
+.tag {
+  font-size: 18px; font-weight: 500;
+  color: #00C5A0; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 28px;
+}
+.stat-label {
+  font-size: 22px; font-weight: 400;
+  color: rgba(255,255,255,0.45); margin-bottom: 4px;
+}
+.stat {
+  font-size: 130px; font-weight: 700;
+  color: #00C5A0; line-height: 0.92; margin-bottom: 4px;
+}
+.stat-unit {
+  font-size: 24px; font-weight: 400;
+  color: rgba(255,255,255,0.50); margin-bottom: 32px;
+}
+.line {
+  width: 48px; height: 2px;
+  background: #00C5A0; margin-bottom: 24px;
+}
+.headline {
+  font-size: 40px; font-weight: 700;
+  color: #FFFFFF; margin-bottom: 16px;
+}
+.body {
+  font-size: 30px; font-weight: 400;
+  color: rgba(255,255,255,0.68); line-height: 1.52;
+  max-width: 780px;
+}
+.progress-bar {
+  position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 3px;
+  background: rgba(255,255,255,0.10);
+}
+.progress-fill { height: 100%; width: 89%; background: #00C5A0; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="ring"></div>
+  <div class="phone"><img src="../imagens/tela-app.png" alt=""></div>
+  <div class="phone-fade"></div>
+  <div class="phone-right-fade"></div>
+
+  <!-- CPL / financial balance visualization -->
+  <svg class="balance-svg" viewBox="0 0 440 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Donut chart showing cost breakdown -->
+    <!-- Outer ring — full -->
+    <circle cx="200" cy="180" r="150" stroke="rgba(0,197,160,0.15)" stroke-width="40"/>
+    <!-- Alimentação: ~55% -->
+    <circle cx="200" cy="180" r="150" stroke="#00C5A0" stroke-width="40"
+      stroke-dasharray="518 942" stroke-dashoffset="-236" stroke-linecap="round"/>
+    <!-- Mão de obra: ~20% -->
+    <circle cx="200" cy="180" r="150" stroke="rgba(0,197,160,0.55)" stroke-width="40"
+      stroke-dasharray="188 942" stroke-dashoffset="-754" stroke-linecap="round"/>
+    <!-- Outros: ~25% -->
+    <circle cx="200" cy="180" r="150" stroke="rgba(0,197,160,0.30)" stroke-width="40"
+      stroke-dasharray="235 942" stroke-dashoffset="-942" stroke-linecap="round"/>
+    <!-- Center text -->
+    <text x="200" y="165" text-anchor="middle" fill="#00C5A0" font-size="32" font-weight="700" font-family="Ubuntu">Custo</text>
+    <text x="200" y="200" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="20" font-family="Ubuntu">por litro</text>
+    <!-- Legend items -->
+    <rect x="10" y="350" width="16" height="16" rx="3" fill="#00C5A0"/>
+    <text x="32" y="363" fill="rgba(255,255,255,0.7)" font-size="18" font-family="Ubuntu">Alimentação 55%</text>
+    <rect x="10" y="375" width="16" height="16" rx="3" fill="rgba(0,197,160,0.55)"/>
+    <text x="32" y="388" fill="rgba(255,255,255,0.6)" font-size="18" font-family="Ubuntu">Mão de obra 20%</text>
+    <rect x="220" y="350" width="16" height="16" rx="3" fill="rgba(0,197,160,0.30)"/>
+    <text x="242" y="363" fill="rgba(255,255,255,0.5)" font-size="18" font-family="Ubuntu">Outros 25%</text>
+  </svg>
+
+  <div class="ghost">05</div>
+  <div class="content">
+    <div class="tag">Indicador 05</div>
+    <div class="stat-label">Custo de Produção por Litro</div>
+    <div class="stat">CPL</div>
+    <div class="stat-unit">o indicador que fecha o ciclo</div>
+    <div class="line"></div>
+    <div class="headline">Eficiência financeira</div>
+    <div class="body">De nada adianta produzir muito se o custo consome a margem. Fazendas eficientes conhecem seu CPL mensal e ajustam antes que a conta feche no negativo.</div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill"></div></div>
+</body>
+</html>

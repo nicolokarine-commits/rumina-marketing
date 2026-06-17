@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px;
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(140deg, #071E22 0%, #0C2D3E 55%, #061A1D 100%);
+  position: relative; overflow: hidden;
+}
+.dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(0,197,160,0.10) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+.phone {
+  position: absolute;
+  right: -80px; top: 20px;
+  width: 600px; z-index: 2;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.75));
+  opacity: 0.88;
+}
+.phone img { width: 100%; display: block; }
+.phone-fade {
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 100%; height: 680px; z-index: 3;
+  background: linear-gradient(180deg, transparent 0%, rgba(7,30,34,0.75) 30%, rgba(7,30,34,0.97) 60%, rgba(7,30,34,1) 100%);
+}
+.phone-right-fade {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 120px; z-index: 4;
+  background: linear-gradient(90deg, transparent, rgba(7,30,34,0.9));
+}
+/* Calendar / timeline visualization */
+.calendar-svg {
+  position: absolute;
+  left: 40px; top: 70px;
+  width: 420px; height: 380px;
+  z-index: 2; opacity: 0.22;
+}
+.ring {
+  position: absolute; left: -80px; top: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  border: 45px solid rgba(0,197,160,0.05);
+  z-index: 1;
+}
+.ghost {
+  position: absolute;
+  left: 60px; bottom: 280px;
+  font-size: 280px; font-weight: 700;
+  color: rgba(0,197,160,0.05); line-height: 1;
+  z-index: 1;
+}
+.content {
+  position: absolute;
+  bottom: 100px; left: 0; right: 0;
+  padding: 0 72px; z-index: 10;
+}
+.tag {
+  font-size: 18px; font-weight: 500;
+  color: #00C5A0; letter-spacing: 3px;
+  text-transform: uppercase; margin-bottom: 28px;
+}
+.stat-label {
+  font-size: 22px; font-weight: 400;
+  color: rgba(255,255,255,0.45); margin-bottom: 4px;
+}
+.stat {
+  font-size: 120px; font-weight: 700;
+  color: #00C5A0; line-height: 0.92; margin-bottom: 4px;
+}
+.stat-unit {
+  font-size: 24px; font-weight: 400;
+  color: rgba(255,255,255,0.50); margin-bottom: 32px;
+}
+.line {
+  width: 48px; height: 2px;
+  background: #00C5A0; margin-bottom: 24px;
+}
+.headline {
+  font-size: 40px; font-weight: 700;
+  color: #FFFFFF; margin-bottom: 16px;
+}
+.body {
+  font-size: 30px; font-weight: 400;
+  color: rgba(255,255,255,0.68); line-height: 1.52;
+  max-width: 780px;
+}
+.body strong { color: #FFFFFF; font-weight: 500; }
+.progress-bar {
+  position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 3px;
+  background: rgba(255,255,255,0.10);
+}
+.progress-fill { height: 100%; width: 78%; background: #00C5A0; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="ring"></div>
+  <div class="phone"><img src="../imagens/tela-app.png" alt=""></div>
+  <div class="phone-fade"></div>
+  <div class="phone-right-fade"></div>
+
+  <!-- Timeline / IEP visualization -->
+  <svg class="calendar-svg" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Track line -->
+    <line x1="20" y1="120" x2="400" y2="120" stroke="#00C5A0" stroke-width="3" opacity="0.5"/>
+    <!-- Ideal range: 12-13 months -->
+    <rect x="190" y="100" width="80" height="40" rx="8" fill="#00C5A0" opacity="0.8"/>
+    <text x="230" y="126" text-anchor="middle" fill="#061A1D" font-size="18" font-weight="700" font-family="Ubuntu">ideal</text>
+    <!-- Month markers -->
+    <line x1="20" y1="110" x2="20" y2="130" stroke="#00C5A0" stroke-width="2"/>
+    <text x="20" y="155" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="16" font-family="Ubuntu">0</text>
+    <line x1="82" y1="110" x2="82" y2="130" stroke="#00C5A0" stroke-width="2"/>
+    <text x="82" y="155" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="16" font-family="Ubuntu">3</text>
+    <line x1="145" y1="110" x2="145" y2="130" stroke="#00C5A0" stroke-width="2"/>
+    <text x="145" y="155" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="16" font-family="Ubuntu">6</text>
+    <line x1="207" y1="110" x2="207" y2="130" stroke="#00C5A0" stroke-width="2"/>
+    <text x="207" y="155" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="16" font-family="Ubuntu">9</text>
+    <line x1="270" y1="110" x2="270" y2="130" stroke="#00C5A0" stroke-width="2"/>
+    <text x="270" y="155" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="18" font-weight="700" font-family="Ubuntu">12</text>
+    <line x1="332" y1="110" x2="332" y2="130" stroke="#00C5A0" stroke-width="2"/>
+    <text x="332" y="155" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="16" font-family="Ubuntu">15</text>
+    <line x1="395" y1="110" x2="395" y2="130" stroke="#00C5A0" stroke-width="2"/>
+    <text x="395" y="155" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="16" font-family="Ubuntu">18</text>
+    <!-- Arrow showing danger zone beyond 13 -->
+    <rect x="340" y="100" width="55" height="40" rx="6" fill="rgba(255,80,80,0.25)" stroke="rgba(255,80,80,0.5)" stroke-width="1.5"/>
+    <text x="368" y="126" text-anchor="middle" fill="rgba(255,120,120,0.9)" font-size="14" font-family="Ubuntu">perda</text>
+    <!-- Circles above timeline -->
+    <circle cx="270" cy="50" r="30" stroke="#00C5A0" stroke-width="4" fill="none"/>
+    <text x="270" y="58" text-anchor="middle" fill="#00C5A0" font-size="22" font-weight="700" font-family="Ubuntu">P</text>
+    <circle cx="330" cy="50" r="22" stroke="rgba(0,197,160,0.5)" stroke-width="3" fill="none"/>
+    <circle cx="210" cy="50" r="22" stroke="rgba(0,197,160,0.5)" stroke-width="3" fill="none"/>
+    <text x="330" y="57" text-anchor="middle" fill="rgba(0,197,160,0.7)" font-size="16" font-weight="700" font-family="Ubuntu">S</text>
+    <text x="210" y="57" text-anchor="middle" fill="rgba(0,197,160,0.7)" font-size="16" font-weight="700" font-family="Ubuntu">G</text>
+    <!-- Connecting lines (reprodução cycle) -->
+    <line x1="232" y1="50" x2="248" y2="50" stroke="rgba(0,197,160,0.4)" stroke-width="2"/>
+    <line x1="292" y1="50" x2="308" y2="50" stroke="rgba(0,197,160,0.4)" stroke-width="2"/>
+  </svg>
+
+  <div class="ghost">04</div>
+  <div class="content">
+    <div class="tag">Indicador 04</div>
+    <div class="stat-label">Intervalo Entre Partos — ideal</div>
+    <div class="stat">12–13</div>
+    <div class="stat-unit">meses</div>
+    <div class="line"></div>
+    <div class="headline">Regularidade reprodutiva</div>
+    <div class="body">Cada mês além de 13 no IEP representa um ciclo de lactação perdido. Uma vaca com IEP de 16 meses produz, em média, <strong>15% menos leite por ano</strong> com o mesmo custo fixo.</div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill"></div></div>
+</body>
+</html>
