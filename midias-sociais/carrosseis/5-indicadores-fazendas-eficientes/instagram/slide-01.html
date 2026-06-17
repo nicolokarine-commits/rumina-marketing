@@ -7,47 +7,107 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   width: 1080px; height: 1350px;
-  background: #0C2C30;
+  background: linear-gradient(155deg, #071E22 0%, #0C2C30 45%, #0D4038 100%);
   font-family: 'Ubuntu', sans-serif;
   position: relative; overflow: hidden;
+}
+
+/* Decorative background elements */
+.bg-circle-1 {
+  position: absolute; top: -120px; right: -120px;
+  width: 520px; height: 520px; border-radius: 50%;
+  border: 1.5px solid rgba(0,197,160,0.18);
+}
+.bg-circle-2 {
+  position: absolute; top: -60px; right: -60px;
+  width: 360px; height: 360px; border-radius: 50%;
+  border: 1.5px solid rgba(0,197,160,0.12);
+}
+.bg-dot {
+  position: absolute; top: 140px; right: 140px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(0,197,160,0.60);
+}
+.bg-line {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.25) 100%);
+}
+
+/* Content */
+.content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0 72px 140px;
   display: flex; flex-direction: column;
   justify-content: flex-end;
-  padding: 80px 72px 96px;
 }
 .tag {
-  font-size: 20px; font-weight: 500;
+  font-size: 19px; font-weight: 500;
   color: #00C5A0; letter-spacing: 3px;
-  text-transform: uppercase; margin-bottom: 52px;
+  text-transform: uppercase; margin-bottom: 44px;
 }
 .headline {
-  font-size: 72px; font-weight: 700;
-  color: #FFFFFF; line-height: 1.1;
-  margin-bottom: 36px;
+  font-size: 70px; font-weight: 700;
+  color: #FFFFFF; line-height: 1.08;
+  margin-bottom: 32px;
+}
+.headline em {
+  font-style: normal;
+  color: #00C5A0;
 }
 .line {
   width: 56px; height: 2px;
-  background: #00C5A0; margin-bottom: 36px;
+  background: #00C5A0; margin-bottom: 32px;
 }
 .subheadline {
-  font-size: 36px; font-weight: 400;
-  color: rgba(255,255,255,0.70); line-height: 1.55;
+  font-size: 34px; font-weight: 400;
+  color: rgba(255,255,255,0.65); line-height: 1.5;
 }
+
+/* Footer logos */
+.footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0 72px 44px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 22px;
+}
+.logo-rumina { height: 36px; }
+.logo-ideagri { height: 30px; }
+
+/* Progress bar */
 .progress-bar {
   position: absolute; bottom: 0; left: 0;
   width: 100%; height: 3px;
-  background: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.10);
 }
 .progress-fill {
   height: 100%; width: 11%;
-  background: rgba(255,255,255,0.40);
+  background: #00C5A0;
 }
 </style>
 </head>
 <body>
-  <div class="tag">Gestão Leiteira</div>
-  <div class="headline">Quais indicadores<br>sua fazenda<br>acompanha<br>todo mês?</div>
-  <div class="line"></div>
-  <div class="subheadline">Se a resposta é "poucos" ou "nenhum",<br>este conteúdo é para você.</div>
+  <div class="bg-circle-1"></div>
+  <div class="bg-circle-2"></div>
+  <div class="bg-dot"></div>
+  <div class="bg-line"></div>
+
+  <div class="content">
+    <div class="tag">Gestão Leiteira</div>
+    <div class="headline">Quais indicadores<br>sua fazenda<br>acompanha<br><em>todo mês?</em></div>
+    <div class="line"></div>
+    <div class="subheadline">Se a resposta é "poucos" ou "nenhum",<br>este conteúdo é para você.</div>
+  </div>
+
+  <div class="footer">
+    <img class="logo-rumina" src="../imagens/logo-rumina-escuro.png" alt="Rúmina">
+    <img class="logo-ideagri" src="../imagens/logo-ideagri-escuro.png" alt="Ideagri">
+  </div>
+
   <div class="progress-bar"><div class="progress-fill"></div></div>
 </body>
 </html>
