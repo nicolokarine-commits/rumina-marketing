@@ -1,14 +1,49 @@
-# Claude Code OS — Kit Ratos de IA
+# Rúmina — Claude Code OS (Marketing)
 
-Este repositório é o kit de boas-vindas do curso Claude Code OS.
+## O que é esse workspace
+Workspace interno do time de marketing da Rúmina, gerenciado por Karine (Coordenadora de Projetos e Conteúdo). Suporta as frentes de coordenação de eventos, gestão de mídias sociais, campanhas, projetos especiais e produção de conteúdo.
 
-Se você acabou de clonar esse repositório:
-1. Rode `/setup` pra configurar o sistema pro seu negócio (uns 5 minutos)
-2. Depois rode `/mapear` pra criar skills personalizadas pro que você faz no dia a dia
+**Estrutura de pastas:**
+- `eventos/` — briefings, cronogramas e materiais de eventos
+- `midias-sociais/` — conteúdo, calendário editorial, planejamento de publicações
+- `campanhas/` — campanhas sazonais, projetos especiais, criativos de ads
+- `conteudo/` — textos, roteiros, artigos, pautas
+- `fornecedores/` — briefings e controles de designer, freela de vídeo e agência
+- `projetos/` — projetos transversais e documentação de processos
+- `dados/` — referências, pesquisas, benchmarks, relatórios
+- `marca/` — identidade visual, logos, design-guide
+- `templates/skills/` — templates de skills prontos para personalizar com /mapear
+- `templates/ferramentas/catalogo.md` — APIs e ferramentas disponíveis para usar em skills
+
+## Sobre o negócio
+A Rúmina é uma empresa de AgTech especializada em bovinocultura leiteira, estruturada como holding que reúne múltiplos produtos digitais: Ideagri, OnFarm, RúmiAction, RúmiFlow, RúmiProCare, Rúmina Insights, Rúmi, RúmiScore, RúmiCorte e iMilk. Cada produto tem identidade visual própria com cor de destaque específica dentro do sistema de marca.
+
+## O que mais fazemos aqui
+- Produção e gestão de conteúdo para redes sociais da Rúmina e dos produtos
+- Planejamento e execução de eventos (incluindo Agroleite e outros do setor)
+- Desenvolvimento de campanhas de marketing e projetos especiais
+- Coordenação de fornecedores: designer interno, freela de vídeo e agência
+- Estruturação de processos e skills de IA para escalar a operação
+
+## Clientes e contexto
+Uso interno. O workspace apoia a operação de marketing da Rúmina — não atende clientes externos.
+
+## Tom de voz
+Técnico e institucional. Linguagem clara, objetiva e adequada ao contexto corporativo e ao setor AgTech. Sem excessos de entusiasmo, sem gírias, sem bullet points desnecessários.
+
+## Equipe
+- Karine — Coordenadora de Projetos e Conteúdo
+- Designer (interno)
+- Freela de vídeo
+
+## Ferramentas conectadas
+- ClickUp — gestão de projetos e tarefas
+- Slack — comunicação interna
+- Gmail — e-mail corporativo
+- Redes sociais — Meta (Instagram, Facebook) e outras
+- GoHighLevel — CRM e automação de marketing (migração recente do RD Station)
 
 ---
-
-<!-- Este arquivo será atualizado pelo /setup com o contexto do seu negócio. -->
 
 ## Contexto do negócio
 
