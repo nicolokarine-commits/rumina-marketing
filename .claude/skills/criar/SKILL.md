@@ -35,8 +35,8 @@ Orquestra a colaboração entre especialistas para produzir entregáveis que nen
 | especialista-rumi | `/especialista-rumi` | Rúmi WhatsApp IA |
 | especialista-insights | `/especialista-insights` | Rúmina Insights, painéis, RúmiScore |
 | especialista-rumiprocare | `/especialista-rumiprocare` | RúmiProCare, saúde animal |
-| especialista-onfarm | `/especialista-onfarm` | OnFarm, monitoramento de campo |
-| especialista-rumiflow | `/especialista-rumiflow` | RúmiFlow, automação de processos |
+| especialista-onfarm | `/especialista-onfarm` | OnFarm, diagnóstico microbiológico de mastite na fazenda |
+| especialista-rumiflow | `/especialista-rumiflow` | RúmiFlow, equipamento de pré-ordenha automatizado |
 
 ### Craft (executam o conteúdo)
 | Skill | Trigger | Foco |
