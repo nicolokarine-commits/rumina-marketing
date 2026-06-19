@@ -31,6 +31,9 @@ anotacoes/
 curriculo/
 tarefas.md
 
+# Banco de imagens — HTML pesado com miniaturas embutidas (86MB, não versionar)
+marca/banco-imagens/galeria.html
+
 # Sistema
 .DS_Store
 node_modules/
