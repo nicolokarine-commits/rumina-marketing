@@ -33,3 +33,9 @@ Quando gerar imagens por IA (Pollinations, DALL-E, etc.) — apenas para paisage
 - Conteúdo de redes sociais deve equilibrar linguagem técnica com clareza para o produtor rural
 - Materiais institucionais seguem o padrão corporativo da Rúmina
 - Sempre considerar qual produto da Rúmina está sendo comunicado — cada um tem posicionamento e cor próprios
+
+## Posicionamenta Rúmi (orientação do Laerte, CEO)
+A Rúmi é a inteligência da Rúmina presente em vários pontos da jornada: WhatsApp, Ideagri Desktop e Rúmina Insights. NÃO posicionar como "inteligência exclusiva do WhatsApp" — o WhatsApp é um canal de acesso, não a definição da solução.
+
+Evitar: "a inteligência da Rúmina no WhatsApp", "gestão pelo WhatsApp" como fechamento ou definição.
+Preferir: "a inteligência da Rúmina onde você está", "presente no WhatsApp, no Ideagri e no Insights".
