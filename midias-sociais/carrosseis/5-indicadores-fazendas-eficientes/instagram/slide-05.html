@@ -5,142 +5,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  width: 1080px; height: 1350px;
-  font-family: 'Ubuntu', sans-serif;
-  background: linear-gradient(140deg, #071E22 0%, #0C2D3E 55%, #061A1D 100%);
-  position: relative; overflow: hidden;
-}
-.dots {
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(0,197,160,0.10) 1.5px, transparent 1.5px);
-  background-size: 28px 28px;
-}
-/* Phone mockup — upper right */
-.phone {
-  position: absolute;
-  right: -80px; top: 20px;
-  width: 600px; z-index: 2;
-  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.75));
-  opacity: 0.88;
-}
-.phone img { width: 100%; display: block; }
-.phone-fade {
-  position: absolute;
-  right: 0; bottom: 0;
-  width: 100%; height: 680px; z-index: 3;
-  background: linear-gradient(180deg, transparent 0%, rgba(7,30,34,0.75) 30%, rgba(7,30,34,0.97) 60%, rgba(7,30,34,1) 100%);
-}
-.phone-right-fade {
-  position: absolute;
-  right: 0; top: 0; bottom: 0;
-  width: 120px; z-index: 4;
-  background: linear-gradient(90deg, transparent, rgba(7,30,34,0.9));
-}
-/* Abstract CCS gauge in upper-left area */
-.gauge-wrap {
-  position: absolute; left: 40px; top: 60px;
-  width: 340px; height: 340px;
-  z-index: 2;
-  opacity: 0.20;
-}
-/* Brand ring upper left */
-.ring {
-  position: absolute; left: -80px; top: -80px;
-  width: 380px; height: 380px;
-  border-radius: 50%;
-  border: 50px solid rgba(0,197,160,0.06);
-  z-index: 1;
-}
-/* Ghost number */
-.ghost {
-  position: absolute;
-  left: 60px; bottom: 280px;
-  font-size: 280px; font-weight: 700;
-  color: rgba(0,197,160,0.05); line-height: 1;
-  z-index: 1;
-}
-.content {
-  position: absolute;
-  bottom: 100px; left: 0; right: 0;
-  padding: 0 72px; z-index: 10;
-}
-.tag {
-  font-size: 18px; font-weight: 500;
-  color: #00C5A0; letter-spacing: 3px;
-  text-transform: uppercase; margin-bottom: 28px;
-}
-.stat-label {
-  font-size: 22px; font-weight: 400;
-  color: rgba(255,255,255,0.45); margin-bottom: 4px;
-}
-.stat {
-  font-size: 118px; font-weight: 700;
-  color: #00C5A0; line-height: 0.92;
-  margin-bottom: 4px;
-}
-.stat-unit {
-  font-size: 24px; font-weight: 400;
-  color: rgba(255,255,255,0.50); margin-bottom: 32px;
-}
-.line {
-  width: 48px; height: 2px;
-  background: #00C5A0; margin-bottom: 24px;
-}
-.headline {
-  font-size: 40px; font-weight: 700;
-  color: #FFFFFF; margin-bottom: 16px;
-}
-.body {
-  font-size: 30px; font-weight: 400;
-  color: rgba(255,255,255,0.68); line-height: 1.52;
-  max-width: 780px;
-}
-.body strong { color: #FFFFFF; font-weight: 500; }
-.progress-bar {
-  position: absolute; bottom: 0; left: 0;
-  width: 100%; height: 3px;
-  background: rgba(255,255,255,0.10);
-}
-.progress-fill { height: 100%; width: 56%; background: #00C5A0; }
+body { width: 1080px; height: 1350px; font-family: 'Ubuntu', sans-serif; background: linear-gradient(135deg, #061A1D 0%, #0B2E3C 50%, #071E22 100%); position: relative; overflow: hidden; }
+.accent-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #00C5A0; z-index: 1; }
+.phone { position: absolute; left: 80px; top: 180px; width: 450px; z-index: 2; }
+.phone img { width: 100%; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.40)); }
+.phone-fade { position: absolute; left: 0; bottom: 100px; width: 450px; height: 200px; background: linear-gradient(180deg, transparent, rgba(6,26,29,1)); z-index: 3; }
+.tag { font-size: 14px; font-weight: 700; color: #00C5A0; letter-spacing: 2px; text-transform: uppercase; }
+.stat-label { font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.50); margin-bottom: 8px; margin-top: 20px; }
+.stat-value { font-size: 56px; font-weight: 700; color: #00C5A0; line-height: 1.0; margin-bottom: 12px; }
+.headline { font-size: 44px; font-weight: 700; color: #FFFFFF; line-height: 1.1; margin-bottom: 20px; }
+.line { width: 48px; height: 3px; background: #00C5A0; margin-bottom: 20px; }
+.body { font-size: 28px; font-weight: 400; color: rgba(255,255,255,0.75); line-height: 1.40; }
+.content { position: absolute; bottom: 120px; left: 550px; right: 72px; }
+.progress-bar { position: absolute; bottom: 0; left: 0; width: 56%; height: 3px; background: #00C5A0; z-index: 1; }
 </style>
 </head>
 <body>
-  <div class="dots"></div>
-  <div class="ring"></div>
-  <div class="phone"><img src="../imagens/tela-app.png" alt=""></div>
-  <div class="phone-fade"></div>
-  <div class="phone-right-fade"></div>
-  <!-- SVG gauge visualization -->
-  <svg class="gauge-wrap" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Outer ring -->
-    <circle cx="170" cy="170" r="155" stroke="#00C5A0" stroke-width="8" stroke-dasharray="8 12"/>
-    <!-- Health arc — green zone -->
-    <circle cx="170" cy="170" r="120" stroke="#00C5A0" stroke-width="24"
-      stroke-dasharray="190 565" stroke-dashoffset="-141" stroke-linecap="round"/>
-    <!-- Warning arc — danger zone -->
-    <circle cx="170" cy="170" r="120" stroke="#FF4444" stroke-width="24"
-      stroke-dasharray="190 565" stroke-dashoffset="-331" stroke-linecap="round" opacity="0.6"/>
-    <!-- Center value -->
-    <text x="170" y="155" text-anchor="middle" fill="#00C5A0" font-size="52" font-weight="700" font-family="Ubuntu">&lt;200k</text>
-    <text x="170" y="200" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="22" font-family="Ubuntu">CCS ideal</text>
-    <!-- Tick marks -->
-    <line x1="170" y1="15" x2="170" y2="40" stroke="#00C5A0" stroke-width="3"/>
-    <line x1="309" y1="55" x2="291" y2="73" stroke="#00C5A0" stroke-width="3"/>
-    <line x1="325" y1="170" x2="300" y2="170" stroke="#00C5A0" stroke-width="3"/>
-    <line x1="15" y1="170" x2="40" y2="170" stroke="#00C5A0" stroke-width="3"/>
-    <line x1="31" y1="55" x2="49" y2="73" stroke="#00C5A0" stroke-width="3"/>
-  </svg>
-  <div class="ghost">02</div>
+  <div class="accent-bar"></div>
+  <div class="phone">
+    <img src="../imagens/tela-app.png" alt="Ideagri">
+    <div class="phone-fade"></div>
+  </div>
   <div class="content">
     <div class="tag">Indicador 02</div>
-    <div class="stat-label">CCS — meta de referência</div>
-    <div class="stat">&lt; 200k</div>
-    <div class="stat-unit">células/mL no leite do tanque</div>
+    <div class="stat-label">CCS no tanque</div>
+    <div class="stat-value">&lt; 200k</div>
     <div class="line"></div>
     <div class="headline">Saúde do úbere</div>
-    <div class="body">A Contagem de Células Somáticas é o termômetro da mastite subclínica. Rebanhos com CCS acima de <strong>400 mil</strong> perdem entre 5% e 20% da produção — muitas vezes sem sintoma visível.</div>
+    <div class="body">Contagem de Células Somáticas é o termômetro da mastite subclínica. Acima de 400 mil, rebanhos perdem entre 5% e 20% de produção — muitas vezes sem sintoma visível.</div>
   </div>
-  <div class="progress-bar"><div class="progress-fill"></div></div>
+  <div class="progress-bar"></div>
 </body>
 </html>

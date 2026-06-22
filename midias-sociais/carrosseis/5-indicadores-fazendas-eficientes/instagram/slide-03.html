@@ -5,146 +5,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  width: 1080px; height: 1350px;
-  font-family: 'Ubuntu', sans-serif;
-  background: linear-gradient(140deg, #071E22 0%, #0C2D3E 55%, #061A1D 100%);
-  position: relative; overflow: hidden;
-}
-.dots {
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(0,197,160,0.10) 1.5px, transparent 1.5px);
-  background-size: 28px 28px;
-}
-/* Abstract "declining data" visualization in upper area */
-.chart-area {
-  position: absolute;
-  right: 60px; top: 80px;
-  width: 500px; height: 520px;
-}
-/* Bar chart bars — declining */
-.bar-group {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  gap: 28px;
-  padding: 0 20px;
-  opacity: 0.20;
-}
-.bar {
-  flex: 1;
-  background: linear-gradient(180deg, #00C5A0, rgba(0,197,160,0.4));
-  border-radius: 6px 6px 0 0;
-  min-width: 40px;
-}
-/* Trend line going down */
-.trend-line-svg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  opacity: 0.18;
-}
-/* Large brand ring — upper left */
-.ring-bg {
-  position: absolute;
-  left: -200px; top: -200px;
-  width: 700px; height: 700px;
-  border-radius: 50%;
-  border: 80px solid rgba(0,197,160,0.04);
-}
-/* Left accent bar */
-.accent {
-  position: absolute; left: 0; top: 450px;
-  width: 4px; height: 260px;
-  background: linear-gradient(180deg, transparent, #00C5A0, transparent);
-}
-/* Content */
-.content {
-  position: absolute;
-  bottom: 100px; left: 0; right: 0;
-  padding: 0 72px;
-  z-index: 10;
-}
-.tag {
-  font-size: 18px; font-weight: 500;
-  color: #00C5A0; letter-spacing: 3px;
-  text-transform: uppercase; margin-bottom: 44px;
-}
-.headline {
-  font-size: 80px; font-weight: 700;
-  color: #FFFFFF; line-height: 1.05;
-  margin-bottom: 44px;
-}
-.line {
-  width: 48px; height: 2px;
-  background: #00C5A0; margin-bottom: 36px;
-}
-.body {
-  font-size: 36px; font-weight: 400;
-  color: rgba(255,255,255,0.68); line-height: 1.55;
-  max-width: 840px;
-}
-.body strong { color: #FFFFFF; font-weight: 500; }
-.progress-bar {
-  position: absolute; bottom: 0; left: 0;
-  width: 100%; height: 3px;
-  background: rgba(255,255,255,0.10);
-}
-.progress-fill {
-  height: 100%; width: 33%;
-  background: #00C5A0;
-}
+body { width: 1080px; height: 1350px; font-family: 'Ubuntu', sans-serif; background: linear-gradient(135deg, #061A1D 0%, #0B2E3C 50%, #071E22 100%); position: relative; overflow: hidden; }
+.accent-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #00C5A0; z-index: 1; }
+.content { position: absolute; top: 50%; left: 72px; right: 72px; transform: translateY(-50%); }
+.tag { font-size: 14px; font-weight: 700; color: #00C5A0; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 32px; }
+.headline { font-size: 72px; font-weight: 700; color: #FFFFFF; line-height: 1.08; margin-bottom: 32px; }
+.line { width: 48px; height: 3px; background: #00C5A0; margin-bottom: 32px; }
+.body { font-size: 38px; font-weight: 400; color: rgba(255,255,255,0.80); line-height: 1.45; }
+.progress-bar { position: absolute; bottom: 0; left: 0; width: 33%; height: 3px; background: #00C5A0; z-index: 1; }
 </style>
 </head>
 <body>
-  <div class="dots"></div>
-  <div class="ring-bg"></div>
-  <div class="accent"></div>
-
-  <!-- Abstract bar chart visualization -->
-  <div class="chart-area">
-    <svg class="trend-line-svg" viewBox="0 0 500 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Grid lines -->
-      <line x1="0" y1="100" x2="500" y2="100" stroke="#00C5A0" stroke-width="1" stroke-dasharray="6 6"/>
-      <line x1="0" y1="200" x2="500" y2="200" stroke="#00C5A0" stroke-width="1" stroke-dasharray="6 6"/>
-      <line x1="0" y1="300" x2="500" y2="300" stroke="#00C5A0" stroke-width="1" stroke-dasharray="6 6"/>
-      <line x1="0" y1="400" x2="500" y2="400" stroke="#00C5A0" stroke-width="1" stroke-dasharray="6 6"/>
-      <!-- Declining trend line -->
-      <polyline points="30,80 110,140 190,200 280,300 370,390 460,460" stroke="#00C5A0" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- Area fill -->
-      <polygon points="30,80 110,140 190,200 280,300 370,390 460,460 460,520 30,520" fill="url(#fade)" opacity="0.3"/>
-      <defs>
-        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#00C5A0"/>
-          <stop offset="100%" stop-color="#00C5A0" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <!-- Data points -->
-      <circle cx="30" cy="80" r="7" fill="#00C5A0"/>
-      <circle cx="110" cy="140" r="7" fill="#00C5A0"/>
-      <circle cx="190" cy="200" r="7" fill="#00C5A0"/>
-      <circle cx="280" cy="300" r="7" fill="#00C5A0"/>
-      <circle cx="370" cy="390" r="7" fill="#00C5A0"/>
-      <circle cx="460" cy="460" r="7" fill="#00C5A0"/>
-    </svg>
-    <div class="bar-group">
-      <div class="bar" style="height:88%"></div>
-      <div class="bar" style="height:75%"></div>
-      <div class="bar" style="height:58%"></div>
-      <div class="bar" style="height:42%"></div>
-      <div class="bar" style="height:26%"></div>
-      <div class="bar" style="height:14%"></div>
-    </div>
-  </div>
-
+  <div class="accent-bar"></div>
   <div class="content">
-    <div class="tag">O problema</div>
-    <div class="headline">Sem indicadores,<br>a decisão<br>vira achismo.</div>
+    <div class="tag">O Problema</div>
+    <div class="headline">Sem indicadores, a decisão vira achismo.</div>
     <div class="line"></div>
-    <div class="body">Quando a produção cai, o produtor que não monitora descobre depois do fechamento do mês — tarde demais pra corrigir. O que separa a gestão reativa da eficiente é o <strong>tempo de resposta</strong>.</div>
+    <div class="body">Quando a produção cai, o produtor que não monitora só descobre depois do fechamento do mês — tarde demais pra corrigir. O que separa a gestão reativa da gestão eficiente é o tempo de resposta.</div>
   </div>
-  <div class="progress-bar"><div class="progress-fill"></div></div>
+  <div class="progress-bar"></div>
 </body>
 </html>
